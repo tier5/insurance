@@ -1,0 +1,57 @@
+28.02.2016 08:58:57 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 09:06:27 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 09:34:00 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 09:43:12 parse error: failed at `.sidebar_outer_menu .menu_side_nav > li ul,` line: 77
+28.02.2016 09:43:18 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 09:43:26 parse error: failed at `.sidebar_outer_menu .menu_side_nav > li ul,` line: 77
+28.02.2016 09:43:37 parse error: failed at `.sidebar_outer_menu .menu_side_nav > li ul,` line: 77
+28.02.2016 09:45:55 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 10:00:00 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 10:04:25 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 13:41:24 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 13:45:50 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 14:01:54 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 14:40:53 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 14:46:26 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 14:50:15 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 16:01:06 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 16:31:41 .p_font is undefined: failed at `.p_font();` line: 40
+28.02.2016 16:32:26 .p_font is undefined: failed at `.p_font();` line: 40
+29.02.2016 07:14:50 variable @original_accent2 is undefined: failed at `background-color: @@color_var;` line: 724
+29.02.2016 07:15:34 variable @original_accent2 is undefined: failed at `background-color: @@color_var;` line: 724
+29.02.2016 07:34:47 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 702
+29.02.2016 07:35:51 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 702
+29.02.2016 07:37:28 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 702
+29.02.2016 07:37:59 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 702
+29.02.2016 07:38:33 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 699
+29.02.2016 07:40:47 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 699
+29.02.2016 07:41:51 .p_font is undefined: failed at `.p_font();` line: 40
+29.02.2016 09:39:43 .p_font is undefined: failed at `.p_font();` line: 40
+29.02.2016 09:49:09 .p_font is undefined: failed at `.p_font();` line: 40
+29.02.2016 16:01:43 parse error: unclosed block
+29.02.2016 19:02:24 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 09:19:44 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 09:20:53 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 09:26:16 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 10:06:21 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 707
+01.03.2016 10:06:43 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 707
+01.03.2016 10:06:51 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 11:37:18 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 11:41:32 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 18:14:47 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 18:37:28 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 18:37:57 variable @original_accent2 is undefined: failed at `background-color: @@color_var;` line: 508
+01.03.2016 18:40:39 .p_font is undefined: failed at `.p_font();` line: 40
+01.03.2016 18:51:45 .p_font is undefined: failed at `.p_font();` line: 40
+02.03.2016 08:57:14 .p_font is undefined: failed at `.p_font();` line: 40
+02.03.2016 09:22:21 .p_font is undefined: failed at `.p_font();` line: 40
+02.03.2016 13:00:36 .p_font is undefined: failed at `.p_font();` line: 40
+02.03.2016 13:23:17 variable @original_accent2 is undefined: failed at `color: @@color_var;` line: 624
+02.03.2016 15:24:58 .p_font is undefined: failed at `.p_font();` line: 40
+03.03.2016 10:19:04 .p_font is undefined: failed at `.p_font();` line: 40
+03.03.2016 15:31:20 .p_font is undefined: failed at `.p_font();` line: 40
+04.03.2016 12:32:14 .p_font is undefined: failed at `.p_font();` line: 40
+04.03.2016 13:19:19 .p_font is undefined: failed at `.p_font();` line: 40
+04.03.2016 13:22:06 .p_font is undefined: failed at `.p_font();` line: 40
+04.03.2016 15:39:08 .p_font is undefined: failed at `.p_font();` line: 40
+07.03.2016 15:25:08 parse error: unclosed block
