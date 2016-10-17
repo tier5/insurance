@@ -1,43 +1,7 @@
 <?php 
 // Get template args
 extract(investment_template_get_args('top-panel-top'));
-
-if (in_array('contact_info', $top_panel_top_components) && ($contact_info=trim(investment_get_custom_option('contact_info')))!='') {
-	?>
-	<div class="top_panel_top_contact_area">
-		<?php echo force_balance_tags($contact_info); ?>
-	</div>
-	<?php
-}
-
-//E-mail
-if (in_array('contact_email', $top_panel_top_components) && ($contact_email=trim(investment_get_custom_option('contact_email')))!='') {
-    ?>
-    <div class="top_panel_top_contact_area icon-11 contact_email">
-        <?php echo force_balance_tags($contact_email); ?>
-    </div>
-<?php
-}
-
-//Phone
-if (in_array('contact_phone', $top_panel_top_components) && ($contact_phone=trim(investment_get_custom_option('contact_phone')))!='') {
-    ?>
-    <div class="top_panel_top_contact_area icon-12 contact_phone">
-        <?php echo force_balance_tags($contact_phone); ?>
-    </div>
-<?php
-}
-
 ?>
-
-<?php
-if (in_array('open_hours', $top_panel_top_components) && ($open_hours=trim(investment_get_custom_option('contact_open_hours')))!='') {
-	?>
-	<div class="top_panel_top_open_hours icon-clock"><?php echo force_balance_tags($open_hours); ?></div>
-	<?php
-}
-?>
-
 <div class="top_panel_top_user_area">
 	<?php
 	if (in_array('socials', $top_panel_top_components) && investment_get_custom_option('show_socials')=='yes') {
@@ -172,3 +136,40 @@ if (in_array('open_hours', $top_panel_top_components) && ($open_hours=trim(inves
 	</ul>
 
 </div>
+<?php
+if (in_array('contact_info', $top_panel_top_components) && ($contact_info=trim(investment_get_custom_option('contact_info')))!='') {
+	?>
+	<div class="top_panel_top_contact_area">
+		<?php echo force_balance_tags($contact_info); ?>
+	</div>
+	<?php
+}
+
+//E-mail
+if (in_array('contact_email', $top_panel_top_components) && ($contact_email=trim(investment_get_custom_option('contact_email')))!='') {
+    ?>
+    <div class="top_panel_top_contact_area icon-11 contact_email">
+        <?php echo force_balance_tags($contact_email); ?>
+    </div>
+<?php
+}
+
+//Phone
+if (in_array('contact_phone', $top_panel_top_components) && ($contact_phone=trim(investment_get_custom_option('contact_phone')))!='') {
+    ?>
+    <div class="top_panel_top_contact_area icon-12 contact_phone">
+        <?php echo force_balance_tags($contact_phone); ?>
+    </div>
+<?php
+}
+
+?>
+
+<?php
+if (in_array('open_hours', $top_panel_top_components) && ($open_hours=trim(investment_get_custom_option('contact_open_hours')))!='') {
+	?>
+	<div class="top_panel_top_open_hours icon-clock"><?php echo force_balance_tags($open_hours); ?></div>
+	<?php
+}
+?>
+
