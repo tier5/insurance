@@ -36,6 +36,17 @@ if (empty($body_scheme)  || investment_is_inherit_option($body_scheme)) $body_sc
 
 	wp_head();
 	?>
+	<script>
+	jQuery(window).scroll(function() {    
+    var scroll = jQuery(window).scrollTop();
+	jQuery(".header").html(scroll);
+		if (scroll > 50) {
+			jQuery(".scheme_original .top_panel_middle").css("top","0px");
+		} else {
+			jQuery(".scheme_original .top_panel_middle").css("top","50px");
+		}
+	});
+	</script>
 </head>
 
 <body <?php body_class();?>>

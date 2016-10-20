@@ -83,7 +83,7 @@ if ($show_date || $show_counters || $show_author) {
 									    ? '#'
 									    : $post_link
 									    );
-		$output .= '<span class="post_info_item post_info_counters">'
+		$output .= '<span class="post_info_item post_info_counters">bbbbbbbbbbbb'
 			. ($post_counters_link ? '<a href="' . esc_url($post_counters_link) . '"' : '<span') 
 				. ' class="post_counters_item ' . esc_attr($post_counters_icon) . '"'
 				. (investment_strpos($show_counters, 'likes')!==false
