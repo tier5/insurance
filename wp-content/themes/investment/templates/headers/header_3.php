@@ -36,7 +36,12 @@ if ( !function_exists( 'investment_template_header_3_output' ) ) {
 		<div class="top_panel_fixed_wrap"></div>
 
 		<header class="top_panel_wrap top_panel_style_3 scheme_<?php echo esc_attr($post_options['scheme']); ?>">
-			<div class="top_panel_wrap_inner top_panel_inner_style_3 top_panel_position_<?php echo esc_attr(investment_get_custom_option('top_panel_position')); ?>">
+			<div class="top_panel_wrap_inner <?php if(is_front_page()) {
+ echo"classtest"; } 
+ else {
+    echo "page_inner";
+}
+?> top_panel_inner_style_3 top_panel_position_<?php echo esc_attr(investment_get_custom_option('top_panel_position')); ?>">
 			
 			<?php if (investment_get_custom_option('show_top_panel_top')=='yes') { ?>
 				<div class="top_panel_top">

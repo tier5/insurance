@@ -1342,8 +1342,8 @@ body:not(.top_panel_fixed) .top_panel_position_over .top_panel_bottom {
 	padding:1em 1.5em;
 }
 .top_panel_middle .menu_main_wrap {
-    margin-top: 0.6em;
-    margin-bottom: 0.25em;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
 }
 .menu_main_nav > li:nth-last-child(2) > a {
     padding-right: 0;
@@ -5574,4 +5574,11 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
 
 .mb2 {
     max-width: 370px;
+}
+.scheme_original .footer_wrap_inner {
+    background-color: #10638d;
+}
+.scheme_original .copyright_wrap_inner {
+    background-color: #4c4c4c;
+    color:#fff;
 }

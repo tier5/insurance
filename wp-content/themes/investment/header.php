@@ -42,14 +42,16 @@ if (empty($body_scheme)  || investment_is_inherit_option($body_scheme)) $body_sc
 	jQuery(".header").html(scroll);
 		if (scroll > 50) {
 			jQuery(".scheme_original .top_panel_middle").css("top","0px");
+			jQuery(".page_inner").css("height","auto");
 		} else {
 			jQuery(".scheme_original .top_panel_middle").css("top","50px");
+			jQuery(".page_inner").css("height","176px");
 		}
 	});
 	</script>
 </head>
 
-<body <?php body_class();?>>
+<body <?php body_class(); ?>?>
 	<?php 
 	investment_profiler_add_point(esc_html__('BODY start', 'investment'));
 	echo force_balance_tags(investment_get_custom_option('gtm_code'));
