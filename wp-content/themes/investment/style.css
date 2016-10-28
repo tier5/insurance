@@ -5582,3 +5582,6 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
     background-color: #4c4c4c;
     color:#fff;
 }
+.page_inner {
+    height: 176px;
+}
