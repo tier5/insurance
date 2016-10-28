@@ -40,11 +40,11 @@ if (empty($body_scheme)  || investment_is_inherit_option($body_scheme)) $body_sc
 	jQuery(window).scroll(function() {    
     var scroll = jQuery(window).scrollTop();
 	jQuery(".header").html(scroll);
-		if (scroll > 50) {
+		if (scroll > 48) {
 			jQuery(".scheme_original .top_panel_middle").css("top","0px");
 			jQuery(".page_inner").css("height","auto");
 		} else {
-			jQuery(".scheme_original .top_panel_middle").css("top","50px");
+			jQuery(".scheme_original .top_panel_middle").css("top","49px");
 			jQuery(".page_inner").css("height","176px");
 		}
 	});
