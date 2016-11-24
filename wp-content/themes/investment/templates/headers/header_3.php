@@ -56,7 +56,7 @@ if ( !function_exists( 'investment_template_header_3_output' ) ) {
 				</div>
 			<?php } ?>
 
-			<div class="top_panel_middle" <?php echo trim($header_css); ?>>
+			<div class="top_panel_middle " <?php echo trim($header_css); ?>>
 				<div class="content_wrap">
 					<div class="contact_logo">
 						<?php investment_show_logo(true, true); ?>
@@ -68,6 +68,18 @@ if ( !function_exists( 'investment_template_header_3_output' ) ) {
 							if (empty($menu_main)) $menu_main = investment_get_nav_menu();
 							echo trim($menu_main);
 							?>
+							<ul class="menu_main_nav inited sf-js-enabled sf-arrows">
+								
+								<?php if ( is_user_logged_in() ) {?>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a>Hi, user</a></li>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo site_url();?>/dashboard">My account</a></li>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo wp_logout_url(); ?>" title="Logout">Logout</a></li>
+								<?php }else{?><li id="menu-item-712"class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo site_url();?>/login">Login</a></li>
+								<?php } ?>
+							</ul>
+						</nav>
+						<nav class="menu_main_nav_area">
+							
 						</nav>
 					</div>
 				</div>

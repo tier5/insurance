@@ -244,4 +244,38 @@ function register_user(){
       define('REGISTRATION_ERROR', serialize($errors));
   endif;
 }
+function my_login_redirect( $url, $request, $user ){
+    if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
+        if( $user->has_cap( 'administrator' ) ) {
+            $url = admin_url();
+        } else {
+            $url = home_url('/dashboard/');
+        }
+    }
+    return $url;
+}
+add_filter('login_redirect', 'my_login_redirect', 10, 3 );
+function login_failed() {
+  $login_page  = home_url( '/login/' );
+  wp_redirect( $login_page . '?login=failed' );
+  exit;
+}
+add_action( 'wp_login_failed', 'login_failed' );
+ 
+function verify_username_password( $user, $username, $password ) {
+  $login_page  = home_url( '/login/' );
+    if( $username == "" || $password == "" ) {
+        wp_redirect( $login_page . "?login=empty" );
+        exit;
+    }
+}
+add_filter( 'authenticate', 'verify_username_password', 1, 3);
+add_filter( 'body_class', 'my_neat_body_class');
+function my_neat_body_class( $classes ) {
+if ( is_page('login'))
+$classes[] = 'login';
+return $classes;
+}
+//* Redirect WordPress Logout to Home Page
+add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
 ?>
