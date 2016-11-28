@@ -7,15 +7,24 @@ if(!is_user_logged_in()){
     wp_safe_redirect(site_url());
     exit;
 }
+global $current_user;
+$user_info = get_userdata($current_user->ID);
 
-$current_user = get_current_user_id();
-$user_info = get_userdata($current_user);
-if(!empty($_POST['action'])){
+if(!empty($_POST['submit'])){
 
-
+$email = $_POST['agent_email'];
+$fullname = $_POST['full_name'];
+$phone = $_POST['phone'];
+$streeaddr = $_POST['street_address'];
+$addrline2 = $_POST['address_line2'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$zipcode = $_POST['zipcode'];
+$country = $_POST['country'];
 $file = $_FILES['agent_image'];
 
-if(!empty($file)){
+
+if(!empty($file['name'])){
 require_once( ABSPATH . 'wp-admin/includes/admin.php' );
 $file_return = wp_handle_upload( $file, array('test_form' => false ) );
       if( isset( $file_return['error'] ) || isset( $file_return['upload_error_handler'] ) ) {
@@ -37,55 +46,27 @@ $file_return = wp_handle_upload( $file, array('test_form' => false ) );
       }
 }
 
-$fullname = $_POST['full_name'];
-$phone = $_POST['phone'];
-$streeaddr = $_POST['street_address'];
-$addrline2 = $_POST['address_line2'];
-$city = $_POST['city'];
-$state = $_POST['state'];
-$zipcode = $_POST['zipcode'];
-$country = $_POST['country'];
-
-
 if(!empty($fullname)){
-update_user_meta($user_ID,'full_name',$fullname);
+update_user_meta($user_info->ID,'full_name',$fullname);
 }
 if(!empty($phone)){
-update_user_meta($user_ID,'phone',$phone);
+update_user_meta($user_info->ID,'phone',$phone);
 }
-update_user_meta($user_ID,'street_address',$streeaddr);
-update_user_meta($user_ID,'address_line2',$addrline2);
-update_user_meta($user_ID,'city',$city);
-update_user_meta($user_ID,'state',$state);
-update_user_meta($user_ID,'zipcode',$zipcode);
-update_user_meta($user_ID,'country',$country);
-
-
-require_once(ABSPATH . 'wp-admin/includes/user.php');
-require_once(ABSPATH . WPINC . '/registration.php');
-
-//check_admin_referer('update-profile_' . $user_ID);
-//echo $user_ID; die();
-$errors = edit_user($user_ID);
-
-if ( is_wp_error( $errors ) ) {
-foreach( $errors->get_error_messages() as $message )
-$errmsg = "$message";
-}
-
-if($errmsg == '')
+if ( !empty( $_POST['agent_email'] ) )
 {
-// Update all meta fields
-
-do_action('personal_options_update',$user_ID);
-$d_url = $_POST['dashboard_url'];
-wp_redirect( get_option("siteurl").'?page_id='.$post->ID.'&updated=true' );
+   $user_info->user_email=$_POST['agent_email'];
+   wp_update_user( array ('ID' => $user_info->ID, 'user_email' => esc_attr( $user_info->user_email ) ) ) ;
 }
-else{
-$errmsg = '<div class="box-red">' . $errmsg . '</div>';
-$errcolor = 'style="background-color:#FFEBE8;border:1px solid #CC0000;"';
 
-}
+update_user_meta($user_info->ID,'street_address',$streeaddr);
+update_user_meta($user_info->ID,'address_line2',$addrline2);
+update_user_meta($user_info->ID,'city',$city);
+update_user_meta($user_info->ID,'state',$state);
+update_user_meta($user_info->ID,'zipcode',$zipcode);
+update_user_meta($user_info->ID,'country',$country);
+
+$succmsg = "true";
+
 }
 ?>
 <!DOCTYPE html>
@@ -103,6 +84,7 @@ $errcolor = 'style="background-color:#FFEBE8;border:1px solid #CC0000;"';
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body class="login">	
 <!-- header start -->
 <header>
@@ -128,7 +110,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 							<div class="user-details">
 								<ul>
 									<li><a href="<?php echo site_url();?>/profile"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
-									<li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i>Password</a></li>
+									<li><a href="#" data-toggle="modal" data-target="#modalPassword"><i class="fa fa-lock" aria-hidden="true"></i>Password</a></li>
 									<li><a href="<?php echo wp_logout_url(site_url());?>"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a></li>
 								</ul>
 							</div>
@@ -148,29 +130,18 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 			<div class="mainDiv">
 				<?php require_once('dashboard_sidebar.php' );?>
 				<div class="main-content">
-					<form name="profile" action="" method="post" enctype="multipart/form-data">
-<?php wp_nonce_field('update-profile_' . $user_ID) ?>
-<input type="hidden" name="from" value="profile" />
-<input type="hidden" name="action" value="update" />
-<input type="hidden" name="checkuser_id" value="<?php echo $user_ID ?>" />
-<input type="hidden" name="dashboard_url" value="<?php echo get_option("dashboard_url"); ?>" />
-<input type="hidden" name="user_id" id="user_id" value="<?php echo $user_id; ?>" />
-<input type="hidden" name="nickname" value="<?php echo $user_info->nickname;?>">
+
+        <div id="page-wrapper">
+            <form name="profile" action="<?php echo site_url();?>/profile" method="post" enctype="multipart/form-data">
 <table width="100%" cellspacing="0" cellpadding="0" border="0">
-<?php if ( isset($_GET['updated']) ):
-$d_url = $_GET['d'];?>
+<?php if ( $succmsg =="true" ):?>
 <tr>
-<td align="center" colspan="2"><span style="color: #FF0000; font-size: 11px;">Your profile changed successfully</span></td>
-</tr>
-<?php elseif($errmsg!=""): ?>
-<tr>
-<td align="center" colspan="2"><span style="color: #FF0000; font-size: 11px;"><?php echo $errmsg;?></span></td>
+<td align="center" colspan="2"><span style="color: #659633; font-size: 11px;">Your profile changed successfully</span></td>
 </tr>
 <?php endif;?>
 <tr>
 <td colspan="2" align="center"><h2>Update profile</h2></td>
 </tr>
-
 <tr>
 <td>Profile Pic</td>
 <td>
@@ -178,25 +149,16 @@ $d_url = $_GET['d'];?>
 <?php 
 $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',true));
 ?>
-<img src="<?php echo($image[0]!= "") ? $image[0] : get_template_directory_uri().'/images/dummy_players.png';?>"  class="profile_img"/>
+<img src="<?php echo($image[0]!= "") ? $image[0] : get_template_directory_uri().'/images/dummy_players.png';?>" height="100" width="100"/>
 </td>
 </tr>
 <tr>
 <td>Full Name <span style="color: #F00">*</span></td>
-<td><input type="text" name="full_name" id="full_name" value="<?php echo get_user_meta($user_info->ID,'full_name',true); ?>" style="width: 300px;" /></td>
+<td><input type="text" name="full_name" id="full_name" value="<?php echo get_user_meta($user_info->ID,'full_name',true); ?>" style="width: 300px;" required/></td>
 </tr>
-<tr>
 <tr>
 <td>Email <span style="color: #F00">*</span></td>
-<td><input type="text" name="email" class="mid2" id="email" value="<?php echo $user_info->user_email ?>" style="width: 300px;" /></td>
-</tr>
-<tr>
-<td>New Password </td>
-<td><input type="password" name="pass1" class="mid2" id="pass1" value="" style="width: 300px;" /></td>
-</tr>
-<tr>
-<td>New Password Confirm </td>
-<td><input type="password" name="pass2" class="mid2" id="pass2" value="" style="width: 300px;" /></td>
+<td><input type="text" name="agent_email" id="agent_email" value="<?php echo $user_info->user_email; ?>" style="width: 300px;" required/></td>
 </tr>
 <tr>
 <td align="right" colspan="2"><span style="color: #F00">*</span> <span style="padding-right:40px;">mandatory fields</span></td>
@@ -204,7 +166,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 <tr><td colspan="2"><h3>Extra profile information</h3></td></tr>
 <tr>
 <td>Phone <span style="color: #F00">*</span></td>
-<td><input type="text" name="phone" id="phone" value="<?php echo get_user_meta($user_info->ID,'phone',true); ?>" style="width: 300px;" /></td>
+<td><input type="text" name="phone" id="phone" value="<?php echo get_user_meta($user_info->ID,'phone',true); ?>" style="width: 300px;" required/></td>
 </tr>
 <tr>
 <td>Street Address</td>
@@ -247,11 +209,13 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 </tr>
 
 <tr>
-<td align="center" colspan="2"><input type="submit" value="Update" /></td>
+<td align="center" colspan="2"><input type="submit" name="submit" value="Update" /></td>
 </tr>
 </table>
-<input type="hidden" name="action" value="update" />
 </form>
+        </div>
+    </div> 
+		</div>
 	</div>
 </section>
 <div class="clear"></div>

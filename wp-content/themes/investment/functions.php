@@ -279,3 +279,4 @@ return $classes;
 //* Redirect WordPress Logout to Home Page
 add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
 ?>
+

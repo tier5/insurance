@@ -59,6 +59,7 @@ if (empty($body_scheme)  || investment_is_inherit_option($body_scheme)) $body_sc
 	</script>
 </head>
 
+
 <body <?php body_class(); ?>?>
 
 <?php if(!is_page(dashboard) && !is_page(profile) ):?>
