@@ -1153,7 +1153,7 @@ body:not(.top_panel_fixed) .top_panel_position_over .top_panel_bottom {
 	margin-top:0;
 	position:relative;
 	z-index:8000;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 2px solid rgba(255,255,255,0.08);
     font-size: 0.8em;
 }
 .top_panel_style_1 .top_panel_middle,

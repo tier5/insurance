@@ -14,7 +14,6 @@ Template Name: Login Page
 <style>
 body{
     position: relative;
-   font-family:'SourceSansPro-Regular';
     color: #616161;
     min-height: 100%;
 }
@@ -38,11 +37,14 @@ a:focus, a:hover {
     display: block;
     margin-top: 120px;
     margin-bottom: 50px;
-    width:38%;
 }
 
 .logo img{
-    margin: auto;
+	margin: auto;
+    width: 30%;
+}
+#loginform{
+	padding:20px 20px 0;
 }
 
 .form-heading{
@@ -104,11 +106,14 @@ a:focus, a:hover {
 }
 
 .form input{
-    padding-left: 50px;
     border: 1px solid #e0e0e0;
     color: #616161;
     background: #fff;
     border-radius: 2px;
+    display: block;
+    height: 40px;
+    padding-left: 10px;
+    width: 100%;
 }
 
 .form input[type='submit']{
@@ -121,6 +126,12 @@ a:focus, a:hover {
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 3px;
+}
+
+.form input#rememberme{
+	width:auto;
+	display:inline-block;    
+	vertical-align: middle;
 }
 .form-footer .form-group{
     text-align: right;
@@ -156,6 +167,19 @@ a:focus, a:hover {
 .remember{
     position: relative;
 }
+
+.form label{
+	color: #000;
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+p#nav{
+	text-align: right;
+    padding: 0 15px 15px;
+}
+
 
 /* checkbox style */
 .control {

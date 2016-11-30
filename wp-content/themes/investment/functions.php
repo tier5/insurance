@@ -278,5 +278,8 @@ return $classes;
 }
 //* Redirect WordPress Logout to Home Page
 add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
+
+require_once 'sub-functions.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/wp-/class-phpass.php';
 ?>
 
