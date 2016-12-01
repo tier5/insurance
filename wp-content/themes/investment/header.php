@@ -52,7 +52,7 @@ if (empty($body_scheme)  || investment_is_inherit_option($body_scheme)) $body_sc
 			jQuery(".scheme_original .top_panel_middle").css("top","0px");
 			jQuery(".page_inner").css("height","auto");
 		} else {
-			jQuery(".scheme_original .top_panel_middle").css("top","49px");
+			jQuery(".scheme_original .top_panel_middle").css("top","52px");
 			jQuery(".page_inner").css("height","176px");
 		}
 	});

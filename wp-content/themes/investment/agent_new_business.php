@@ -58,8 +58,18 @@ if ( isset( $_POST['submit'] ) ){
 <link href="<?php echo get_template_directory_uri();?>/css/style_dashboard.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/font-awesome/css/font-awesome.min.css" />
 <link href="<?php echo get_template_directory_uri();?>/new_business_style.css" rel="stylesheet" type="text/css" />
+<style>
+	.frm_ajax_loading {
+    display: none;
+}
+div#my-tab-content {
+    border-radius: 0 2px 2px;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    background-color: #fff;
+}</style>
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/bootstrap/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -129,10 +139,10 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 								}
 							?>	 
 							<div class="tab-pane active" id="green">
-								<div class="form-style" id="contact_form">
+								
     <div class="form-style-heading">Securely Upload Your New Business Applications And Requirements Below</div>
-    <div id="contact_results"></div>
-    <form id="contact_body" method="post" action="<?php echo site_url();?>/contact-me">
+    <?php echo do_shortcode('[formidable id=9]');?>
+    <!--<form id="contact_body" method="post" action="#">
     <label for="subject"><span>Select recipient: <span class="required">*</span></span>
             <select name="subject" required>
 			<option value="">Choose recipient</option>	
@@ -162,7 +172,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 
 <script type="text/javascript">
 var allowed_file_size = "1073741824";
-//var allowed_files = ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg','.doc','.docx'];
+var allowed_files = ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg','.doc','.docx'];
 var border_color = "#C2C2C2"; //initial input border color
 
 $("#contact_body").submit(function(e){
@@ -205,12 +215,12 @@ $("#contact_body").submit(function(e){
 	
 	//if everything's ok, continue with Ajax form submit
 	if(proceed){ 
-		var post_url = $(this).attr("action"); //get form action url
+		//var post_url = $(this).attr("action"); //get form action url
 		var request_method = $(this).attr("method"); //get form GET/POST method
 		var form_data = new FormData(this); //Creates new FormData object
 		
 		$.ajax({ //ajax form submit
-			url : post_url,
+			url : <?php //echo site_url();?>/contact-me,
 			type: request_method,
 			data : form_data,
 			dataType : "json",
@@ -228,7 +238,8 @@ $("#contact_body").submit(function(e){
 		});
 	}
 });
-</script>
+</script>-->
+						
 							</div>
 							<div class="tab-pane" id="blue">
 								<div class="container-fluid">
@@ -249,7 +260,6 @@ $("#contact_body").submit(function(e){
                       <label for="agentcode" class="col-sm-3 control-label">Agent Code</label>
                       <div class="col-sm-8">
                         <input id="agentcode" name="agentcode" class="form-control" type="text" required="" aria-required="true">
-                       
                         </div>
                     </div>
                     <h4>CLIENT INFORMATION</h4>

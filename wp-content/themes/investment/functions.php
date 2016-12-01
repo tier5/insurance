@@ -281,5 +281,14 @@ add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
 
 require_once 'sub-functions.php';
 //require_once $_SERVER['DOCUMENT_ROOT'] . '/wp-/class-phpass.php';
+/**
+ * Disable Admin Bar for All Users Except for Administrators
+ */
+function remove_admin_bar() {
+    if (!current_user_can('administrator')) {
+        show_admin_bar(false);
+    }
+}
+add_action('after_setup_theme', 'remove_admin_bar');
 ?>
 
