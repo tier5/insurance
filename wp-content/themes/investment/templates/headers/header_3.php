@@ -71,7 +71,7 @@ if ( !function_exists( 'investment_template_header_3_output' ) ) {
 							<ul class="menu_main_nav inited sf-js-enabled sf-arrows">
 								
 								<?php if ( is_user_logged_in() ) {?>
-								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a>Hi, user</a></li>
+								<!-- <li class="menu-item menu-item-type-post_type menu-item-object-page"><a>Hi, user</a></li> -->
 								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo site_url();?>/dashboard">My account</a></li>
 								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo wp_logout_url(); ?>" title="Logout">Logout</a></li>
 								<?php }else{?><li id="menu-item-712"class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo site_url();?>/login">Login</a></li>

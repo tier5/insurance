@@ -13,8 +13,8 @@ $user_info = get_userdata($current_user);
 if ( isset( $_POST['submit'] ) ){
     global $wpdb;
     $tablename='New_business_entry';
-	$client_name=$_POST['firstname']." ".$_POST['middleinitial']." ".$_POST['lastname'];
-	$current_date=date();
+  $client_name=$_POST['firstname']." ".$_POST['middleinitial']." ".$_POST['lastname'];
+  $current_date=date();
     $data=array(
         'agent_id' => $_POST['user_id'], 
         'agent_name' => $_POST['agentname_value'],
@@ -40,10 +40,10 @@ if ( isset( $_POST['submit'] ) ){
         'ins_p_premium_volum' => $_POST['annualpremiumvolume'], 
         'ins_p_draft_date' => $_POST['draftdate'], 
         'entry_date' => $current_date );
-	//print_r($data);exit;
+  //print_r($data);exit;
     $wpdb->insert( $tablename, $data);
     
-	}
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,7 @@ if ( isset( $_POST['submit'] ) ){
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/font-awesome/css/font-awesome.min.css" />
 <link href="<?php echo get_template_directory_uri();?>/new_business_style.css" rel="stylesheet" type="text/css" />
 <style>
-	.frm_ajax_loading {
+  .frm_ajax_loading {
     display: none;
 }
 div#my-tab-content {
@@ -81,71 +81,71 @@ div#my-tab-content {
   } );
   </script>
 </head>
-<body class="login">	
+<body class="login">  
 <!-- header start -->
 <header>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="header">
-				<div class="col-md-6 col-sm-6 col-xs-9">
-					<div class="top-left">
-						<a href="#" class="menubar"><i class="fa fa-bars" aria-hidden="true"></i></a>
-						<div class="smalllogo">
-							<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" class="img-responsive"></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6 col-xs-3">
-					<div class="top-right text-right">
-						<div class="usr-pic">
-							<a href="#">
-								<?php 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="header">
+        <div class="col-md-6 col-sm-6 col-xs-9">
+          <div class="top-left">
+            <a href="#" class="menubar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <div class="smalllogo">
+              <a href="#"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" class="img-responsive"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-3">
+          <div class="top-right text-right">
+            <div class="usr-pic">
+              <a href="#">
+                <?php 
 $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',true));
 ?><img src="<?php echo($image[0]!= "") ? $image[0] : get_template_directory_uri().'/images/dummy_players.png';?>" class="img-responsive"/>
-								<!--<img src="images/user.png" class="img-responsive">--></a>
-							<div class="user-details">
-								<ul>
-									<li><a href="<?php echo site_url();?>/profile"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
-									<li><a href="#" data-toggle="modal" data-target="#modalPassword"><i class="fa fa-lock" aria-hidden="true"></i>Password</a></li>
-									<li><a href="<?php echo wp_logout_url(site_url());?>"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                <!--<img src="images/user.png" class="img-responsive">--></a>
+              <div class="user-details">
+                <ul>
+                  <li><a href="<?php echo site_url();?>/profile"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#modalPassword"><i class="fa fa-lock" aria-hidden="true"></i>Password</a></li>
+                  <li><a href="<?php echo wp_logout_url(site_url());?>"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 <!-- header end -->
 
 <!-- Main Content Start -->
 <section>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="mainDiv">
-				<?php require_once('dashboard_sidebar.php' );?>
-				<div class="main-content">
-					
-		<div id="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="mainDiv">
+        <?php require_once('dashboard_sidebar.php' );?>
+        <div class="main-content">
+          
+    <div id="content">
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-			<li><a href="#green" data-toggle="tab">Upload New Business</a></li>
+      <li><a href="#green" data-toggle="tab">Upload New Business</a></li>
             <li><a href="#blue" data-toggle="tab">E-App New Business</a></li>
         </ul>
-						<div id="my-tab-content" class="tab-content">
-							<?php if($wpdb->insert_id)
-								{
-								echo "<span style='padding: 2% 30%;color:green;'>Data Successfully Stored</span>";
-								}
-							?>	 
-							<div class="tab-pane active" id="green">
-								
+            <div id="my-tab-content" class="tab-content">
+              <?php if($wpdb->insert_id)
+                {
+                echo "<span style='padding: 2% 30%;color:green;'>Data Successfully Stored</span>";
+                }
+              ?>   
+              <div class="tab-pane active" id="green">
+                
     <div class="form-style-heading">Securely Upload Your New Business Applications And Requirements Below</div>
-    <?php echo do_shortcode('[formidable id=9]');?>
+    <?php echo do_shortcode('[formidable id=8]');?>
     <!--<form id="contact_body" method="post" action="#">
     <label for="subject"><span>Select recipient: <span class="required">*</span></span>
             <select name="subject" required>
-			<option value="">Choose recipient</option>	
+      <option value="">Choose recipient</option>  
             <option value="Advertise">New business</option>
             
             </select>
@@ -165,7 +165,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
             <textarea name="message" data-required="true"></textarea>
         </label>
         <label><span>&nbsp;</span>
-        	<button type="submit">Submit</button>
+          <button type="submit">Submit</button>
         </label>
     </form>
 </div>
@@ -177,10 +177,10 @@ var border_color = "#C2C2C2"; //initial input border color
 
 $("#contact_body").submit(function(e){
     e.preventDefault(); //prevent default action 
-	proceed = true;
-	
-	//simple input validation
-	$($(this).find("input[data-required=true], textarea[data-required=true]")).each(function(){
+  proceed = true;
+  
+  //simple input validation
+  $($(this).find("input[data-required=true], textarea[data-required=true]")).each(function(){
             if(!$.trim($(this).val())){ //if this field is empty 
                 $(this).css('border-color','red'); //change border color to red   
                 proceed = false; //set do not proceed flag
@@ -191,61 +191,61 @@ $("#contact_body").submit(function(e){
                 $(this).css('border-color','red'); //change border color to red   
                 proceed = false; //set do not proceed flag              
             }   
-	}).on("input", function(){ //change border color to original
-		 $(this).css('border-color', border_color);
-	});
-	
-	//check file size and type before upload, works in modern browsers
-	if(window.File && window.FileReader && window.FileList && window.Blob){
-		var total_files_size = 0;
-		$(this.elements['file_attach[]'].files).each(function(i, ifile){
-			if(ifile.value !== ""){ //continue only if file(s) are selected
+  }).on("input", function(){ //change border color to original
+     $(this).css('border-color', border_color);
+  });
+  
+  //check file size and type before upload, works in modern browsers
+  if(window.File && window.FileReader && window.FileList && window.Blob){
+    var total_files_size = 0;
+    $(this.elements['file_attach[]'].files).each(function(i, ifile){
+      if(ifile.value !== ""){ //continue only if file(s) are selected
                 if(allowed_files.indexOf(ifile.type) === -1){ //check unsupported file
                     alert( ifile.name + " is unsupported file type!");
                     proceed = false;
                 }
              total_files_size = total_files_size + ifile.size; //add file size to total size
-			}
-		}); 
+      }
+    }); 
        if(total_files_size > allowed_file_size){ 
             alert( "Make sure total file size is less than 1 GB!");
             proceed = false;
         }
-	}
-	
-	//if everything's ok, continue with Ajax form submit
-	if(proceed){ 
-		//var post_url = $(this).attr("action"); //get form action url
-		var request_method = $(this).attr("method"); //get form GET/POST method
-		var form_data = new FormData(this); //Creates new FormData object
-		
-		$.ajax({ //ajax form submit
-			url : <?php //echo site_url();?>/contact-me,
-			type: request_method,
-			data : form_data,
-			dataType : "json",
-			contentType: false,
-			cache: false,
-			processData:false
-		}).done(function(res){ //fetch server "json" messages when done
-			if(res.type == "error"){
-				$("#contact_results").html('<div class="error">'+ res.text +"</div>");
-			}
-			
-			if(res.type == "done"){
-				$("#contact_results").html('<div class="success">'+ res.text +"</div>");
-			}
-		});
-	}
+  }
+  
+  //if everything's ok, continue with Ajax form submit
+  if(proceed){ 
+    //var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = new FormData(this); //Creates new FormData object
+    
+    $.ajax({ //ajax form submit
+      url : <?php //echo site_url();?>/contact-me,
+      type: request_method,
+      data : form_data,
+      dataType : "json",
+      contentType: false,
+      cache: false,
+      processData:false
+    }).done(function(res){ //fetch server "json" messages when done
+      if(res.type == "error"){
+        $("#contact_results").html('<div class="error">'+ res.text +"</div>");
+      }
+      
+      if(res.type == "done"){
+        $("#contact_results").html('<div class="success">'+ res.text +"</div>");
+      }
+    });
+  }
 });
 </script>-->
-						
-							</div>
-							<div class="tab-pane" id="blue">
-								<div class="container-fluid">
-								
+            
+              </div>
+              <div class="tab-pane" id="blue">
+                <div class="container-fluid">
+                
               <form class="form-horizontal "  name="businessform" method ="post">
-				  <input type="hidden" id="user_id" name="user_id" value="<?php echo $user_info->ID;?>" >
+          <input type="hidden" id="user_id" name="user_id" value="<?php echo $user_info->ID;?>" >
                 <div class="form-group">
                   <div class="col-sm-6">
                     <h4>AGENT INFORMATION</h4>
@@ -253,7 +253,7 @@ $("#contact_body").submit(function(e){
 
                       <label for="agentname" class="col-sm-3 control-label"> Agent Name</label>
                       <div class="col-sm-8">
-							<input id="agentname_value" name="agentname_value" ng-model="searchStr" type="text" placeholder="agentname" class="form-control" value="<?php echo get_user_meta($user_info->ID,'full_name',true); ?>" >
+              <input id="agentname_value" name="agentname_value" ng-model="searchStr" type="text" placeholder="agentname" class="form-control" value="<?php echo get_user_meta($user_info->ID,'full_name',true); ?>" >
                         </div>
                     </div>
                     <div class="form-group">
@@ -274,7 +274,7 @@ $("#contact_body").submit(function(e){
                       <label for="middleinitial" class="col-sm-3 control-label"> Middle Initial</label>
                       <div class="col-sm-8">
                         <input id="middleinitial" name="middleinitial" class="form-control" type="text">
-												</div>
+                        </div>
                     </div>
                     <div class="form-group">
                       <label for="lastname" class="col-sm-3 control-label">Last Name</label>
@@ -289,8 +289,8 @@ $("#contact_body").submit(function(e){
                       <label for="gender" class="col-sm-3 control-label">Gender</label>
                       <div class="col-sm-8">
                         <input type="radio" name="gender" value="male"> Male<br>
-						<input type="radio" name="gender" value="female"> Female<br>
-						<input type="radio" name="gender" value="other"> Other
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="other"> Other
 
                           </div>
 
@@ -443,31 +443,31 @@ $("#contact_body").submit(function(e){
                 </div>
               </form>
             </div>
-							</div>
-						</div>
-					</div>
-				
+              </div>
+            </div>
+          </div>
+        
 
-				</div>
-			</div> 
-		</div>
-	</div>
+        </div>
+      </div> 
+    </div>
+  </div>
 </section>
 <div class="clear"></div>
 </body>
 <script type="text/javascript">
-	$(document).ready(function(){
-		$(".menubar").click(function(){
-			$(".sidebarmenu").toggleClass("open");
-			$(".main-content").toggleClass("morewidth");
-		});
-	});
+  $(document).ready(function(){
+    $(".menubar").click(function(){
+      $(".sidebarmenu").toggleClass("open");
+      $(".main-content").toggleClass("morewidth");
+    });
+  });
 </script>
 <script type="text/javascript">
-	$(document).ready(function(){
-		$(".usr-pic a").click(function(){
-			$(".user-details").toggleClass("openmenu");
-		});
-	});
+  $(document).ready(function(){
+    $(".usr-pic a").click(function(){
+      $(".user-details").toggleClass("openmenu");
+    });
+  });
 </script>
 </html>

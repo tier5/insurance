@@ -73,23 +73,23 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 				<div class="main-content">
 					<div class="row">
 						<div class="col-md-3">
-							<a href="#">
+							<a href="<?php echo site_url();?>/carriers">
 							    <div class="info-tile">
 								  <div class="tile-image">
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-1.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
-									<span>Insurance Carriers</span>
+									<span>INSURANCE CARRIER</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
 							</a>
 						</div>
-						<div class="col-md-3">
+						<!-- <div class="col-md-3">
 							<a href="#">
 							    <div class="info-tile">
 								  <div class="tile-image">
-									<img src="<?php echo get_template_directory_uri();?>/images/menu-2.png" class="img-responsive" alt="img15">
+									<img src="<?php //echo get_template_directory_uri();?>/images/menu-2.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
 									<span>Insurance Carriers</span>
@@ -97,7 +97,25 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 								  </div>
 								</div>
 							</a>
+						</div> -->
+
+						<div class="col-md-3">
+							<a href="#">
+							    <div class="info-tile">
+								  <div class="tile-image">
+									<img src="<?php echo get_template_directory_uri();?>/images/menu-10.jpg" class="img-responsive" alt="img15">
+								  </div>
+								  <div class="btn btn-block btn-primary">
+									<span>CONTEST</span>
+								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+								  </div>
+								</div>
+							</a>
 						</div>
+
+
+
+
 						<div class="col-md-3">
 							<a href="#">
 							    <div class="info-tile">
@@ -105,20 +123,20 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-3.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
-									<span>Insurance Carriers</span>
+									<span>LEADER BOARD</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3">
-							<a href="#">
+							<a href="<?php echo site_url(); ?>/contracts">
 							    <div class="info-tile">
 								  <div class="tile-image">
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-4.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
-									<span>Insurance Carriers</span>
+									<span>CONTRACTING</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
@@ -133,20 +151,20 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-5.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
-									<span>Insurance Carriers</span>
+									<span>AGENT RESOURCES</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
 							</a>
 						</div>
 						<div class="col-md-3">
-							<a href="#">
+							<a href="<?php echo site_url();?>/training">
 							    <div class="info-tile">
 								  <div class="tile-image">
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-6.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
-									<span>Insurance Carriers</span>
+									<span>AGENT TRAINING</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
@@ -159,7 +177,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-7.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
-									<span>Insurance Carriers</span>
+									<span>EQUIS EVENTS</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
@@ -172,22 +190,35 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-8.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
-									<span>Insurance Carriers</span>
+									<span>NEW BUSINESS</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
 							</a>
 						</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-md-3">
 							<a href="#">
 							    <div class="info-tile">
 								  <div class="tile-image">
-									<img src="<?php echo get_template_directory_uri();?>/images/menu-9.png" class="img-responsive" alt="img15">
+									<img src="<?php //echo get_template_directory_uri();?>/images/menu-9.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
 									<span>Insurance Carriers</span>
+								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+								  </div>
+								</div>
+							</a>
+						</div> 
+						 <div class="col-md-3">
+							<a href="#">
+							    <div class="info-tile">
+								  <div class="tile-image">
+									<img src="<?php //echo get_template_directory_uri();?>/images/menu-10.jpg" class="img-responsive" alt="img15">
+								  </div>
+								  <div class="btn btn-block btn-primary">
+									<span>CONTEST</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
@@ -197,7 +228,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 							<a href="#">
 							    <div class="info-tile">
 								  <div class="tile-image">
-									<img src="<?php echo get_template_directory_uri();?>/images/menu-10.jpg" class="img-responsive" alt="img15">
+									<img src="<?php //echo get_template_directory_uri();?>/images/menu-11.jpg" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
 									<span>Insurance Carriers</span>
@@ -205,21 +236,8 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 								  </div>
 								</div>
 							</a>
-						</div>
-						<div class="col-md-3">
-							<a href="#">
-							    <div class="info-tile">
-								  <div class="tile-image">
-									<img src="<?php echo get_template_directory_uri();?>/images/menu-11.jpg" class="img-responsive" alt="img15">
-								  </div>
-								  <div class="btn btn-block btn-primary">
-									<span>Insurance Carriers</span>
-								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
-								  </div>
-								</div>
-							</a>
-						</div>
-					</div>
+						</div> 
+					</div> -->
 				</div>
 			</div> 
 		</div>
