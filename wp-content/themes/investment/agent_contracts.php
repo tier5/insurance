@@ -91,7 +91,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
                     <li class="collection-item">
                       <i class="circle mdi-action-receipt light-blue"></i>
                       <span class="collection-header">CONTRACTING REQUEST FORM</span>
-                      <p>Agency Managers, please complete and submit this form to have contracting sent to a new agent.</p>
+                      <p>PUSH Owners, please complete and submit this form to have contracting sent to a new agent.</p>
                     </li>
 					<li class="collection-item">
 						<form class="form-horizontal" role="form" name="ContractingForm" method="post">

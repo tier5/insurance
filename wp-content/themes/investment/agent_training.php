@@ -77,9 +77,9 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 		<div id="content">
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
             <li class="active"><a href="#red" data-toggle="tab">SALES TRAINING VIDEOS</a></li>
-            <li><a href="#orange" data-toggle="tab">OPT! TRAINING VIDEOS</a></li>
+            <!-- <li><a href="#orange" data-toggle="tab">OPT! TRAINING VIDEOS</a></li> -->
             <li><a href="#yellow" data-toggle="tab">APPLICATION TRAINING</a></li>
-            <li><a href="#green" data-toggle="tab">PODCAST TRAINING</a></li>
+           <!--  <li><a href="#green" data-toggle="tab">PODCAST TRAINING</a></li> -->
             <li><a href="#blue" data-toggle="tab">PRODUCT VIDEOS</a></li>
         </ul>
 						<div id="my-tab-content" class="tab-content">
