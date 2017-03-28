@@ -5587,3 +5587,149 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
 }
 /*-----------------------new css 24-11-2016--------------------------*/
 
+
+/*
+=========================
+	Application-form
+=========================
+*/
+
+.apply-form-wrap .page_content_wrap{
+	background: url('images/bg/form-bg.png') no-repeat;
+	background-size: cover;
+}
+
+.apply-form-wrap input, .apply-form-wrap select{
+	border-radius: 0 !important;
+    height: 40px  !important;
+    font-size: 15px  !important;
+    color: #555  !important;
+    margin-bottom: 0  !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.apply-form-wrap input[type="file"]{
+	width: 48% !important;
+}
+
+.apply-form-wrap textarea{
+	border-radius: 0 !important;
+    font-size: 15px  !important;
+    color: #555  !important;
+    margin-bottom: 15px  !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.apply-form-wrap input[type="submit"]{
+	width: auto !important;
+	height: auto !important;
+    margin-bottom: 0 !important;
+    float: right;
+    margin-top: 0 !important;
+    text-transform: uppercase;
+}
+
+.apply-form-wrap form{
+	float: right;
+    width: 70%;
+	color: #737373;
+    font-size: 13px;
+}
+
+.apply-form-wrap .frm_style_formidable-style.with_frm_style .form-field {
+    margin-bottom: 10px;
+}
+
+.apply-form-wrap .frm_form_field{
+	display: inline-block;
+    width: 45%;
+    margin-right: 20px;
+}
+
+.apply-form-wrap input[type='radio']{
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 0 !important;
+}
+
+.apply-form-wrap .frm_form_field.full-width{
+	width: 100%;
+}
+
+.apply-form-wrap .frm_form_field.full-width label{
+    color: #737373;
+    font-size: 13px;
+    font-weight: normal;
+    width: 50% !important;
+    display: inline-block !important;
+    max-width: 50% !important;
+}
+
+.apply-form-wrap button[type="reset"]{
+	background: #b4b4b4;
+	border: 1px solid #b4b4b4;
+	text-transform: uppercase;
+}
+
+.apply-form-wrap .frm_submit{
+	display: inline-block;
+    width: 100%;
+}
+
+.apply-form-wrap .frm_opt_container, .apply-form-wrap .frm_style_formidable-style.with_frm_style .frm_radio{
+	display: inline-block;
+}
+
+.apply-form-wrap .frm_style_formidable-style.with_frm_style .frm_radio label{
+	width: 100% !important;
+    max-width: 100% !important;
+}
+
+.apply-form-wrap .scheme_original .top_panel_title_inner{
+    background: url(images/bg/page-hero-bg.png)no-repeat bottom center;
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.apply-form-wrap h4{
+	color: #10638d !important;
+    padding: 0 !important;
+    font-size: 36px;
+    display: block;
+    font-weight: 600;
+    max-width: 100% !important;
+    width: 100%;
+    text-align: center;
+}
+
+.apply-form-wrap .top_panel_wrap.scheme_original .top_panel_wrap_inner{
+    background: url(images/bg/page-header-bg.png)no-repeat top center;
+    background-size: cover;
+    height: 148px !important;
+}
+
+.apply-form-wrap .top_panel_wrap.scheme_original .top_panel_wrap_inner .top_panel_top{
+	    background: none !important
+}
+
+.apply-form-wrap .top_panel_wrap.scheme_original .top_panel_wrap_inner .top_panel_middle {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 767px){
+	.apply-form-wrap form {
+	    float: left;
+	    width: 100%;
+	}
+
+	.apply-form-wrap .frm_form_field {
+	    width: 100%;
+	    margin-right: 0;
+	}
+}
+/*
+=========================
+*/

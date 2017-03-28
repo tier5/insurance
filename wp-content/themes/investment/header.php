@@ -116,8 +116,12 @@ if (empty($body_scheme)  || investment_is_inherit_option($body_scheme)) $body_sc
 				$style .= 'background-color: '.($img).';';
 		}
 	?>
-
-	<div class="body_wrap<?php echo !empty($class) ? ' '.esc_attr($class) : ''; ?>"<?php echo !empty($style) ? ' style="'.esc_attr($style).'"' : ''; ?>>
+	<?php if(is_page('application-form')){
+		$addClass="apply-form-wrap";
+		}else{
+			$addClass = "";
+			}?>
+	<div class="body_wrap<?php echo !empty($class) ? ' '.esc_attr($class) : ''; ?> <?php echo $addClass;?>"<?php echo !empty($style) ? ' style="'.esc_attr($style).'"' : ''; ?>>
 
 		<?php
 		if (investment_get_custom_option('show_video_bg')=='yes' && (investment_get_custom_option('video_bg_youtube_code')!='' || investment_get_custom_option('video_bg_url')!='')) {
