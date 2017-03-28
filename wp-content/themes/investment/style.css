@@ -5644,8 +5644,8 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
 
 .apply-form-wrap .frm_form_field{
 	display: inline-block;
-    width: 45%;
-    margin-right: 20px;
+    width: 49%;
+    margin-right: 5px;
 }
 
 .apply-form-wrap input[type='radio']{
