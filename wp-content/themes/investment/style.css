@@ -5609,6 +5609,19 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
     width: 100% !important;
 }
 
+.apply-form-wrap input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ccc;
+}
+.apply-form-wrap input::-moz-placeholder { /* Firefox 19+ */
+  color: #ccc;
+}
+.apply-form-wrap input:-ms-input-placeholder { /* IE 10+ */
+  color: #ccc;
+}
+.apply-form-wrap input:-moz-placeholder { /* Firefox 18- */
+  color: #ccc;
+}
+
 .apply-form-wrap input[type="file"]{
 	width: 48% !important;
 }
@@ -5632,6 +5645,7 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
 }
 
 .apply-form-wrap form{
+	padding-top: 50px;
 	float: right;
     width: 70%;
 	color: #737373;
@@ -5643,9 +5657,14 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
 }
 
 .apply-form-wrap .frm_form_field{
-	display: inline-block;
-    width: 49%;
-    margin-right: 5px;
+    display: inline-block;
+    width: 47.6%;
+    margin-right: 24px;
+    margin-bottom: 15px !important;
+}
+
+.apply-form-wrap .frm_form_field:nth-child(odd){
+	margin-right: 0;
 }
 
 .apply-form-wrap input[type='radio']{
@@ -5655,7 +5674,7 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
 }
 
 .apply-form-wrap .frm_form_field.full-width{
-	width: 100%;
+	width: 99%;
 }
 
 .apply-form-wrap .frm_form_field.full-width label{
@@ -5719,13 +5738,41 @@ h1 .wpb_text_column p, h2 .wpb_text_column p, h3 .wpb_text_column p, h4 .wpb_tex
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+.city-wrapper{
+	display: inline-block;
+	width: 47.6%;
+    margin-right: 24px;
+}
+
+.apply-form-wrap .city-wrapper .frm_form_field{
+	width: 46.5%;
+}
+
+.apply-form-wrap .city-wrapper .frm_form_field:nth-child(odd) {
+    margin-right: 20px;
+}
+
+.apply-form-wrap .city-wrapper .frm_form_field:nth-child(even){
+	margin-right: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+	.apply-form-wrap form {
+	    width: 85%;
+	}
+
+	.apply-form-wrap .city-wrapper .frm_form_field:nth-child(odd) {
+	    margin-right: 18px;
+	}
+}
+
 @media screen and (max-width: 767px){
 	.apply-form-wrap form {
 	    float: left;
 	    width: 100%;
 	}
 
-	.apply-form-wrap .frm_form_field {
+	.apply-form-wrap .frm_form_field, .city-wrapper, .apply-form-wrap .city-wrapper .frm_form_field {
 	    width: 100%;
 	    margin-right: 0;
 	}
