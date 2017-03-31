@@ -177,7 +177,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-7.png" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
-									<span>EQUIS EVENTS</span>
+									<span>PUSH Events</span>
 								  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 								  </div>
 								</div>
