@@ -94,7 +94,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
                       <p>PUSH Owners, please complete and submit this form to have contracting sent to a new agent.</p>
                     </li>
 					<li class="collection-item">
-						<form class="form-horizontal" role="form" name="ContractingForm" method="post">
+						<!--<form class="form-horizontal" role="form" name="ContractingForm" method="post">
 							<div class="form-group">
 								<div class="col-sm-4">
 								<label for="newagentfirstname" class="control-label">New Agent First Name</label>
@@ -184,7 +184,8 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 									<button class="btn btn-primary" type="submit" name="action" ng-click="create();" tabindex="13">submit</button>
 								</div>
 							</div>
-						</form>
+						</form>-->
+						<?php echo do_shortcode('[formidable id=9]');?>
 					</li>
                   </ul>
 			    
