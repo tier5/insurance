@@ -38,16 +38,17 @@ var user_lname = '<?php echo $user_lname;?>';
 if(user_fname!="" && user_lname!=""){
 var user_name = user_fname +" "+ user_lname;
 }else{
-    var user_name = user_fname;
+    user_name = user_fname;
 }
 
 if(user_name !=""){
-//$('#field_98w7ij').val(user_name).attr('readonly', true);
-$('#field_3x8ugw').val(user_name).attr('readonly', true);
+$('#field_98w7ij').val(user_name).attr('readonly', true);
+
 }
 var user_id = '<?php echo $user_id;?>';
 if(user_id!=""){
-$('#field_zl0dif').val(user_id);
+$('#field_3x8ugw').val(user_id);
+//$('#field_zl0dif').val(user_id);
 }
 });  
 </script>
