@@ -76,16 +76,16 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 					
 		<div id="content">
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-            <li class="active"><a href="#red" data-toggle="tab">Online Contracting</a></li>
-            <li><a href="#orange" data-toggle="tab">Contracting Request</a></li>
+            <li><a href="#red" data-toggle="tab">Online Contracting</a></li>
+            <li class="active"><a href="#orange" data-toggle="tab">Contracting Request</a></li>
            
         </ul>
 						<div id="my-tab-content" class="tab-content">
-						<div class="tab-pane active" id="red">
+						<div class="tab-pane" id="red">
 							<iframe src="https://surelc.surancebay.com/sbweb/login.jsp?branchEditable=off&amp;branchRequired=on&amp;branch=New%20Agent&amp;branchVisible=on&amp;gaId=572&amp;gaName=Equis%20Financial%20Inc&amp;gaNameVisible=on" style="width: 100%;height: 700px;" frameborder="0" width="490px" height="300px" scrolling="auto" id="sureLCFrame">
 							</iframe>
 							</div>
-							<div class="tab-pane" id="orange">
+							<div class="tab-pane active" id="orange">
 								<div id="contracting" class="tab-pane ">
 				<ul id="projects-collection" class="collection autoextendcontent" style="list-style-type: none;">
                     <li class="collection-item">

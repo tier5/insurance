@@ -34,3 +34,6 @@ Version 3.3 Released
 Version 3.4 Released
 	1. Changes done for contracting form.
         2. Created form and through plugin and set up mail function there.
+Version 3.5 Released
+	1. when agent click on mail to register neew to be register as user and under the user who send the request.
+	2. show agent hierarchy.

@@ -290,5 +290,31 @@ function remove_admin_bar() {
     }
 }
 add_action('after_setup_theme', 'remove_admin_bar');
+
+
+
+/*add_action('frm_after_create_entry', 'add_agent_id_to_user_table', 30, 2);
+function add_agent_id_to_user_table($entry_id, $form_id){
+  global $wpdb;
+ if($form_id == 2){ //replace 5 with the id of the form
+    $user = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM {$wpdb->prefix}frm_items WHERE id=%d", $entry_id));
+    
+      if ( !$user ) {
+             return;
+         }else{
+          $agent_created_user_id = $_POST['item_meta'][127];
+          echo $agent_created_user_id;
+          update_user_meta($agent_created_user_id,'under_user_id',$user);
+         }
+      
+ }
+}*/
+
+add_filter('get_avatar','add_gravatar_class');
+
+function add_gravatar_class($class) {
+    $class = str_replace("class='avatar", "class='avatar img-responsive", $class);
+    return $class;
+}
 ?>
 
