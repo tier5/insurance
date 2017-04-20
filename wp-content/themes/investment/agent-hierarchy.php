@@ -6,14 +6,6 @@ if(!is_user_logged_in()){
     wp_safe_redirect(site_url());
     exit;
 }
-global $wpdb;
-$current_user = get_current_user_id();
-$user_info = get_userdata($current_user);
-$fname = get_user_meta($current_user,'first_name',true);
-$lname = get_user_meta($current_user,'last_name',true);
-$query = "SELECT * FROM `wp_usermeta` WHERE `meta_key` = 'under_user_id' AND `meta_value` = " . $current_user . " AND `user_id`<>".$current_user;
-$gethierarchy = $wpdb->get_results($query);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -155,6 +147,23 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 	</div>
 </header>
 <section>
+<?php
+global $wpdb;
+$current_user = get_current_user_id();
+$fname = get_user_meta($current_user,'first_name',true);
+$lname = get_user_meta($current_user,'last_name',true);
+$query = "SELECT * FROM `wp_usermeta` WHERE `meta_key` = 'under_user_id' AND `meta_value` = " . $current_user . " AND `user_id`<>".$current_user;
+$gethierarchy = $wpdb->get_results($query);
+
+
+$getcurrentuserparent = "SELECT parent FROM `wp_agent_hierarchy` WHERE `user_id` = ".$current_user;
+$getparentid = $wpdb->get_results($getcurrentuserparent);
+if(is_array($getparentid) && count($getparentid) > 0){
+$parentid = $getparentid[0]->parent;
+}
+$parentfname = get_user_meta($parentid,'first_name',true);
+$parentlname = get_user_meta($parentid,'last_name',true);
+?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="mainDiv">
@@ -168,41 +177,54 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
         </ul>
 						<div id="my-tab-content" class="tab-content">
 						<div class="tab-pane active tree" id="red" style="min-height:300px;">
+
 						<ul>
+
+								<?php if($parentid!=""){?>
+								<li><a href="#"><?php echo get_avatar( $parentid );?>
+								<?php echo $parentfname." ".$parentlname;?></a>
+								<ul>
+									<li>
+										<a href="#"><?php echo get_avatar( $current_user );?>
+								<?php echo $fname." ".$lname;?></a>
+									</li>
+								</ul>
+								<?php }else{?>
 								<li><a href="#"><?php echo get_avatar( $current_user );?>
 								<?php echo $fname." ".$lname;?></a>
+								<?php }?>
+								
+								
 								<?php
-								if(is_array($gethierarchy) && count($gethierarchy)>0){
-									echo '<ul>';
-									foreach($gethierarchy as $hierarchy){
-										$agent_fname = get_user_meta($hierarchy->user_id,'first_name',true);
-										$agent_lname = get_user_meta($hierarchy->user_id,'last_name',true);
-										echo '<li><a href="#">'.get_avatar( $current_user );
-										echo $agent_fname." ".$agent_lname.'</a></li>';
-									}
-									echo '</ul>';
-								} 
-								?>
+								
+								 echo get_childrens($current_user);
+								 ?>
 								</li>
 							</ul>
 							</div>
 							<div class="tab-pane tree" id="orange" style="min-height:300px;">
 								<div id="contracting" class="tab-pane ">
 								<ul>
+
+								<?php if($parentid!=""){?>
+								<li><a href="#"><?php echo get_avatar( $parentid );?>
+								<?php echo $parentfname." ".$parentlname;?></a>
+								<ul>
+									<li>
+										<a href="#"><?php echo get_avatar( $current_user );?>
+								<?php echo $fname." ".$lname;?></a>
+									</li>
+								</ul>
+								<?php }else{?>
 								<li><a href="#"><?php echo get_avatar( $current_user );?>
 								<?php echo $fname." ".$lname;?></a>
+								<?php }?>
+								
+								
 								<?php
-								if(is_array($gethierarchy) && count($gethierarchy)>0){
-									echo '<ul>';
-									foreach($gethierarchy as $hierarchy){
-										$agent_fname = get_user_meta($hierarchy->user_id,'first_name',true);
-										$agent_lname = get_user_meta($hierarchy->user_id,'last_name',true);
-										echo '<li><a href="#">'.get_avatar( $current_user );
-										echo $agent_fname." ".$agent_lname.'</a></li>';
-									}
-									echo '</ul>';
-								} 
-								?>
+								
+								 echo get_childrens($current_user);
+								 ?>
 								</li>
 							</ul>
 			    

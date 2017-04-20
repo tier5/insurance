@@ -293,22 +293,43 @@ add_action('after_setup_theme', 'remove_admin_bar');
 
 
 
-/*add_action('frm_after_create_entry', 'add_agent_id_to_user_table', 30, 2);
+add_action('frm_after_create_entry', 'add_agent_id_to_user_table', 30, 2);
 function add_agent_id_to_user_table($entry_id, $form_id){
   global $wpdb;
- if($form_id == 2){ //replace 5 with the id of the form
+ /*if($form_id == 9){ //replace 5 with the id of the form
+    $userid = $_POST['item_meta'][129];
+    $user = $wpdb->get_var($wpdb->prepare("SELECT * FROM {$wpdb->prefix}agent_hierarchy WHERE user_id=%d AND parent=%d", $userid,0));
+    if(!$user){
+    $wpdb->insert( 
+      'wp_agent_hierarchy', 
+      array( 
+        'user_id' => $userid, 
+        'parent' => 0 
+      )
+    );
+  }
+      
+ }*/
+
+ if($form_id == 2){
     $user = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM {$wpdb->prefix}frm_items WHERE id=%d", $entry_id));
-    
-      if ( !$user ) {
+         if ( !$user ) {
              return;
          }else{
-          $agent_created_user_id = $_POST['item_meta'][127];
-          echo $agent_created_user_id;
-          update_user_meta($agent_created_user_id,'under_user_id',$user);
+          $parent = $_POST['item_meta'][127];
+
+          if($parent!="" && $user!=$parent){
+          $wpdb->insert( 
+          'wp_agent_hierarchy', 
+          array( 
+            'user_id' => $user, 
+            'parent' => $parent 
+          )
+        );
+        }
          }
-      
  }
-}*/
+}
 
 add_filter('get_avatar','add_gravatar_class');
 
@@ -316,5 +337,31 @@ function add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='avatar img-responsive", $class);
     return $class;
 }
+
+
+
+function get_childrens($uid, $html = '') {
+    global $wpdb;        
+    $sql = "SELECT * FROM `wp_agent_hierarchy` WHERE `parent` = $uid";
+    $result = $wpdb->get_results($sql); 
+    if(is_array($result) && count($result) >0){
+       $html .= "<ul>";
+        foreach($result as $res){                                    
+            $first_name = get_user_meta($res->user_id, 'first_name', true);
+            $last_name = get_user_meta($res->user_id, 'last_name', true);
+            $html .= "<li>";
+            $html .= "<a href='#'>";
+            $html .= get_avatar( $res->user_id );
+            $html .= $first_name ." ". $last_name;
+            $html .= get_childrens($res->user_id); 
+            $html .= "</a>";         
+            $html .= "</li>";
+        }
+        $html .= "</ul>";
+    }  
+
+    return $html;
+}
+
 ?>
 

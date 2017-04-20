@@ -7,7 +7,6 @@ if(!is_user_logged_in()){
     wp_safe_redirect(site_url());
     exit;
 }
-
 $current_user = get_current_user_id();
 $user_info = get_userdata($current_user);
 ?>
@@ -25,7 +24,13 @@ $user_info = get_userdata($current_user);
 
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/bootstrap/js/bootstrap.min.js"></script>
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		var user_id = '<?php echo $current_user;?>';
+	$('#field_9bf7qv').val(user_id);
+});
+	
+</script>
 
 </head>
 <body class="login">	
@@ -202,13 +207,18 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 	</div>
 </section>
 <div class="clear"></div>
+
 </body>
+
 <script type="text/javascript">
 	$(document).ready(function(){
+		//var user_id = '<?php //echo $current_user;?>';
+		
 		$(".menubar").click(function(){
 			$(".sidebarmenu").toggleClass("open");
 			$(".main-content").toggleClass("morewidth");
 		});
+
 	});
 </script>
 <script type="text/javascript">
