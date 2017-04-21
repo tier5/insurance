@@ -316,7 +316,8 @@ function add_agent_id_to_user_table($entry_id, $form_id){
          if ( !$user ) {
              return;
          }else{
-          $parent = $_POST['item_meta'][127];
+          $parent = $_POST['item_meta'][141];
+          //for server $parent = $_POST['item_meta'][141];
 
           if($parent!="" && $user!=$parent){
           $wpdb->insert( 
