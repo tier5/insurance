@@ -95,7 +95,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 				<ul id="projects-collection" class="collection autoextendcontent" style="list-style-type: none;">
                     <li class="collection-item">
                       <i class="circle mdi-action-receipt light-blue"></i>
-                      <span class="collection-header">CONTRACTING REQUEST FORM</span>
+                      <!-- <span class="collection-header">CONTRACTING REQUEST FORM</span> -->
                       <p>PUSH Owners, please complete and submit this form to have contracting sent to a new agent.</p>
                     </li>
 					<li class="collection-item">
