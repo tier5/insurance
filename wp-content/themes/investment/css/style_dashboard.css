@@ -1,6 +1,11 @@
 @font-face {
     font-family:'SourceSansPro-Regular';
-    src:url('../fonts/SourceSansPro-Regular.otf') format('truetype');
+    src:url('../css/font-face/SourceSansPro-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family:'SourceSansPro-Semibold';
+    src:url('../css/font-face/SourceSansPro-Semibold.otf') format('truetype');
 }
 html{
     height: 100%;
@@ -278,18 +283,18 @@ ul{
 }
 
 .mainDiv{
-    display: table-row;
-    height: 100%;
+  /*  display: table-row;
+    height: 100%;*/
 }
 
 .sidebarmenu{
     background: #265a94;
     position: relative;
     top: -6px;
-    /*display: inline-block;*/
-    width: 256px;
+    display: inline-block;
+    width: 20%;
     height: 100vh;
-    display: table-cell;
+    /*display: table-cell;*/
     overflow: hidden;
 }
 
@@ -338,12 +343,12 @@ ul{
 }
 
 .main-content{
-    /*display: inline-block;*/
+    display: inline-block;
     vertical-align: top;
-    /*width: 79%;*/
+    width: 79%;
     padding: 20px;
-    display: table-cell;
-    width: 100%;
+    /*display: table-cell;
+    width: 100%;*/
 }
 
 .main-content.morewidth{
@@ -427,13 +432,215 @@ ul{
     color: #bdbdbd;
 }
 
+
+/*
+===========================
+    Contract form
+===========================
+*/
+
+.main-content #content{
+    background-color: #fff;
+    font-size: 15px;
+    padding: 16px;
+    border-radius: 2px;
+}
+
+#content .nav-tabs{
+    border: none;
+}
+
+#content .nav-tabs li a{
+    color: #616161;
+    font-size: 15px;
+    font-family: 'SourceSansPro-Semibold';
+    border-radius: 2px;
+}
+
+#content .nav-tabs li a:hover{
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+}
+
+#content .nav-tabs li.active a{
+    color: #212121;
+    padding: 10px 16px;
+    border-bottom: 1px solid #fff;
+    font-size: 15px;
+}
+
+#my-tab-content{
+    border-radius: 0 2px 2px;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    background-color: #fff;
+    display: inline-block;
+    width: 100%;
+}
+
+#frm_form_9_container .frm_form_fields  label {
+    font-weight: normal;
+    color: #616161;
+}
+
+#frm_form_9_container .frm_form_fields input, #frm_form_9_container .frm_form_fields select{
+    border: 1px solid #e0e0e0;
+    padding: 5px 8px;
+    color: #616161;
+    background: #fff;
+    width: 100%;
+    display: block;
+    height: 32px;
+    font-size: 14px;
+    line-height: 1.45;
+    border-radius: 2px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+#frm_form_9_container .frm_form_fields input:focus, #frm_form_9_container .frm_form_fields select:focus {
+    border: 1px solid #03a9f4;
+    background: #fff;
+    box-shadow: none;
+    outline: 0;
+}
+.form-box{
+    margin-bottom: 32px;
+}
+
+#frm_form_9_container .frm_form_fields .contract-submit{
+    background: #03a9f4;
+    border: 1px solid #03a9f4;
+    width: auto;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 2px;
+    box-shadow: none;
+    transition: background-color .2s ease,color .2s ease,border-color .2s ease;
+}
+
+#frm_form_9_container .frm_form_fields .contract-submit:hover{
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.08);
+    background: #0398db;
+    border: 1px solid #0398db;
+}
+
+#contracting{
+    padding-left: 40px;
+}
+
+.tree{
+    white-space: nowrap;
+    overflow: auto;
+    cursor: -webkit-grab;
+}
+
+.tree ul {
+    padding-top: 20px; position: relative;
+    
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: top;
+    margin: 0 -2px 0 -2px;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%; height: 20px;
+}
+.tree li::after{
+    right: auto; left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child{ padding-top: 0;}
+
+.tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+}
+
+.tree li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0; height: 20px;
+}
+
+.tree li a{
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #616161;
+    text-transform: capitalize;
+    font-family: 'SourceSansPro-Semibold';
+    font-size: 15px;
+    display: inline-block;
+    
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li a img{
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 0 auto;
+}
+
+.tree li a:hover, .tree li a:hover+ul li a {
+    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+    border-color:  #94a0b4;
+}
+
 @media screen and (max-width: 991px){
     .sidebarmenu {
         top: 0;
     }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 767px){
     .sidebarmenu {
         position: absolute;
         z-index: 9;

@@ -18,97 +18,97 @@ if(!is_user_logged_in()){
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/bootstrap/css/bootstrap.min.css" />
 <link href="<?php echo get_template_directory_uri();?>/css/style_dashboard.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/font-awesome/css/font-awesome.min.css" />
-
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/bootstrap/js/bootstrap.min.js"></script>
-   <style type="text/css">
-   	.tree{white-space: nowrap;
-    overflow: auto;
-    cursor: -webkit-grab;
+<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/bootstrap/js/bootstrap.min.js"></script>
+<!-- <style type="text/css">
+   	.tree{
+   		white-space: nowrap;
+    	overflow: auto;
+    	cursor: -webkit-grab;
 	}
 	.tree ul {
-    padding: 20px 0 0 0;
-    position: relative;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-}
-.tree li:only-child {
-    padding-top: 0;
-}
-.tree li {
-    display: inline-block;
-    white-space: nowrap;
-    vertical-align: top;
-    margin: 0 -2px 0 -2px;
-    text-align: center;
-    list-style-type: none;
-    position: relative;
-    padding: 20px 5px 0 5px;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-}
-.tree li a {
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #666;
-    font-family: arial,verdana,tahoma;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: capitalize;
-    display: inline-block;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-}
-.avatar {
-    width: 70px;
-    height: 70px;
-    border: 1px solid rgba(0,0,0,.1);
-    border-radius: 40px;
-    text-align: center;
-    margin: 0 auto;
-    object-fit: cover;
-}
-.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-.tree ul ul::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    border-left: 1px solid #ccc;
-    width: 0;
-    height: 20px;
-}
-.tree li::after {
-    right: auto;
-    left: 50%;
-    border-left: 1px solid #ccc;
-}
-.tree li::before, .tree li::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 50%;
-    border-top: 1px solid #ccc;
-    width: 50%;
-    height: 20px;
-}
+	    padding: 20px 0 0 0;
+	    position: relative;
+	    transition: all 0.5s;
+	    -webkit-transition: all 0.5s;
+	}
+	.tree li:only-child {
+	    padding-top: 0;
+	}
+	.tree li {
+	    display: inline-block;
+	    white-space: nowrap;
+	    vertical-align: top;
+	    margin: 0 -2px 0 -2px;
+	    text-align: center;
+	    list-style-type: none;
+	    position: relative;
+	    padding: 20px 5px 0 5px;
+	    transition: all 0.5s;
+	    -webkit-transition: all 0.5s;
+	    -moz-transition: all 0.5s;
+	}
+	.tree li a {
+	    border: 1px solid #ccc;
+	    padding: 5px 10px;
+	    text-decoration: none;
+	    color: #666;
+	    font-family: arial,verdana,tahoma;
+	    font-size: 14px;
+	    font-weight: bold;
+	    text-transform: capitalize;
+	    display: inline-block;
+	    border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    transition: all 0.5s;
+	    -webkit-transition: all 0.5s;
+	    -moz-transition: all 0.5s;
+	}
+	.avatar {
+	    width: 70px;
+	    height: 70px;
+	    border: 1px solid rgba(0,0,0,.1);
+	    border-radius: 40px;
+	    text-align: center;
+	    margin: 0 auto;
+	    object-fit: cover;
+	}
+	.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	    display: block;
+	    max-width: 100%;
+	    height: auto;
+	}
+	.tree ul ul::before {
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    left: 50%;
+	    border-left: 1px solid #ccc;
+	    width: 0;
+	    height: 20px;
+	}
+	.tree li::after {
+	    right: auto;
+	    left: 50%;
+	    border-left: 1px solid #ccc;
+	}
+	.tree li::before, .tree li::after {
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    right: 50%;
+	    border-top: 1px solid #ccc;
+	    width: 50%;
+	    height: 20px;
+	}
 
-.tree li a:hover, .tree li a:hover+ul li a {
-    background: #c8e4f8;
-    color: #000;
-    border: 1px solid #94a0b4;
-}
-   </style>
+	.tree li a:hover, .tree li a:hover+ul li a {
+	    background: #c8e4f8;
+	    color: #000;
+	    border: 1px solid #94a0b4;
+	}
+</style> -->
 </head>
 <body class="login">	
 <!-- header start -->
@@ -168,72 +168,80 @@ $parentlname = get_user_meta($parentid,'last_name',true);
 		<div class="row">
 			<div class="mainDiv">
 				<?php require_once('dashboard_sidebar.php' );?>
-				<div class="main-content">
+				<div class="main-content container">
 					<div id="content">
-        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-            <li class="active"><a href="#red" data-toggle="tab">My Agency</a></li>
-            <li><a href="#orange" data-toggle="tab">My Immediate Agent</a></li>
-           
-        </ul>
+				        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+				            <li class="active"><a href="#red" data-toggle="tab">My Agency</a></li>
+				            <li><a href="#orange" data-toggle="tab">My Immediate Agent</a></li>
+				           
+				        </ul>
 						<div id="my-tab-content" class="tab-content">
-						<div class="tab-pane active tree" id="red" style="min-height:300px;">
-
-						<ul>
-
-								<?php if($parentid!=""){?>
-								<li><a href="#"><?php echo get_avatar( $parentid );?>
-								<?php echo $parentfname." ".$parentlname;?></a>
-								<ul>
-									<li>
-										<a href="#"><?php echo get_avatar( $current_user );?>
-								<?php echo $fname." ".$lname;?></a>
-									</li>
-								</ul>
-								<?php }else{?>
-								<li><a href="#"><?php echo get_avatar( $current_user );?>
-								<?php echo $fname." ".$lname;?></a>
-								<?php }?>
-								
-								
-								<?php
-								
-								 echo get_childrens($current_user);
-								 ?>
-								</li>
-							</ul>
+							<div class="tab-pane active" id="red" style="min-height:300px;">
+								<div class="tree">
+									<ul>
+										<?php if($parentid!=""){?>
+										<li>
+											<a href="#">
+												<?php echo get_avatar( $parentid );?>
+												<?php echo $parentfname." ".$parentlname;?>
+											</a>
+											<ul>
+												<li>
+													<a href="#">
+														<?php echo get_avatar( $current_user );?>
+														<?php echo $fname." ".$lname;?>
+													</a>
+												</li>
+											</ul>
+										</li>
+										<?php }else{?>
+										<li>
+											<a href="#">
+												<?php echo get_avatar( $current_user );?>
+												<?php echo $fname." ".$lname;?>
+											</a>
+											<?php }?>
+											<?php
+												echo get_childrens($current_user);
+											?>
+										</li>
+									</ul>
+								</div>
 							</div>
-							<div class="tab-pane tree" id="orange" style="min-height:300px;">
+							<div class="tab-pane" id="orange" style="min-height:300px;">
 								<div id="contracting" class="tab-pane ">
-								<ul>
-
-								<?php if($parentid!=""){?>
-								<li><a href="#"><?php echo get_avatar( $parentid );?>
-								<?php echo $parentfname." ".$parentlname;?></a>
-								<ul>
-									<li>
-										<a href="#"><?php echo get_avatar( $current_user );?>
-								<?php echo $fname." ".$lname;?></a>
-									</li>
-								</ul>
-								<?php }else{?>
-								<li><a href="#"><?php echo get_avatar( $current_user );?>
-								<?php echo $fname." ".$lname;?></a>
-								<?php }?>
-								
-								
-								<?php
-								
-								 echo get_childrens($current_user);
-								 ?>
-								</li>
-							</ul>
-			    
-				
+									<div class="tree">
+										<ul>
+											<?php if($parentid!=""){?>
+											<li>
+												<a href="#">
+													<?php echo get_avatar( $parentid );?>
+													<?php echo $parentfname." ".$parentlname;?>
+												</a>
+												<ul>
+													<li>
+														<a href="#"><?php echo get_avatar( $current_user );?>
+												<?php echo $fname." ".$lname;?></a>
+													</li>
+												</ul>
+											</li>
+											<?php }else{?>
+											<li>
+												<a href="#">
+													<?php echo get_avatar( $current_user );?>
+													<?php echo $fname." ".$lname;?>
+												</a>
+												<?php }?>
+												<?php
+												 echo get_childrens($current_user);
+												?>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					
 				</div>
 			</div> 
 		</div>
