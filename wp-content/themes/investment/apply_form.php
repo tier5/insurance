@@ -1,6 +1,11 @@
 <?php
 /* Template Name: Apply Form
 */
+if(is_user_logged_in())
+{
+    wp_redirect(site_url().'/dashboard');
+    exit;
+}
 get_header();
 global $wpdb;
 if(isset($_GET['form_id']) && $_GET['form_id']!=""){

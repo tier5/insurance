@@ -181,13 +181,13 @@ $parentlname = get_user_meta($parentid,'last_name',true);
 									<ul>
 										<?php if($parentid!=""){?>
 										<li>
-											<a href="#">
+											<a href="javascript:void(0);" class="remove-agent" data-userid="<?php echo $current_user;?>" data-agentid="<?php echo $parentid;?>">
 												<?php echo get_avatar( $parentid );?>
 												<?php echo $parentfname." ".$parentlname;?>
 											</a>
 											<ul>
 												<li>
-													<a href="#">
+													<a href="javascript:void(0);" class="remove-agent" data-userid="<?php echo $current_user;?>" data-agentid="<?php echo $parentid;?>">
 														<?php echo get_avatar( $current_user );?>
 														<?php echo $fname." ".$lname;?>
 													</a>
@@ -196,7 +196,7 @@ $parentlname = get_user_meta($parentid,'last_name',true);
 										</li>
 										<?php }else{?>
 										<li>
-											<a href="#">
+											<a href="javascript:void(0);" class="remove-agent" data-userid="<?php echo $current_user;?>" data-agentid="<?php echo $parentid;?>">
 												<?php echo get_avatar( $current_user );?>
 												<?php echo $fname." ".$lname;?>
 											</a>
@@ -263,5 +263,24 @@ $parentlname = get_user_meta($parentid,'last_name',true);
 			$(".user-details").toggleClass("openmenu");
 		});
 	});
+</script>
+<script type="text/javascript">
+	/*$(document).ready(function(){
+		$(document).on('click','.remove-agent',function(){
+			var user_id = $(this).data('userid');
+			var agent_id = $(this).data('agentid');
+			var data = {
+			'action': 'remove_agent',
+			'user_id': user_id,
+			'agent_id': agent_id
+		};*/
+
+		// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+		/*var ajaxurl = '<?php //echo admin_url( 'admin-ajax.php' );?>';
+		jQuery.post(ajaxurl, data, function(response) {
+			
+		});
+		});
+	});*/
 </script>
 </html>

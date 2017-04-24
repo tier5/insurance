@@ -340,9 +340,9 @@ function add_gravatar_class($class) {
 }
 
 
-
+  
 function get_childrens($uid, $html = '') {
-    global $wpdb;        
+    global $wpdb,$current_user; 
     $sql = "SELECT * FROM `wp_agent_hierarchy` WHERE `parent` = $uid";
     $result = $wpdb->get_results($sql); 
     if(is_array($result) && count($result) >0){
@@ -351,7 +351,7 @@ function get_childrens($uid, $html = '') {
             $first_name = get_user_meta($res->user_id, 'first_name', true);
             $last_name = get_user_meta($res->user_id, 'last_name', true);
             $html .= "<li>";
-            $html .= "<a href='#'>";
+            $html .= "<a href='javascript:void(0);' class='remove-agent' data-userid=".$current_user." data-agentid=".$res->user_id.">";
             $html .= get_avatar( $res->user_id );
             $html .= $first_name ." ". $last_name;
             $html .= get_childrens($res->user_id); 
@@ -363,6 +363,25 @@ function get_childrens($uid, $html = '') {
 
     return $html;
 }
+
+
+
+/*add_action( 'wp_ajax_remove_agent', 'remove_agent_callback' );
+add_action( 'wp_ajax_nopriv_remove_agent', 'remove_agent_callback' );
+
+function remove_agent_callback(){
+  $user_id = $_POST['user_id'];
+  $agent_id = $_POST['agent_id'];
+  
+  // if agent id not equal to null that means its not super user
+
+  
+
+
+
+
+  exit();
+}*/
 
 ?>
 
