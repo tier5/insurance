@@ -657,3 +657,8 @@ ul{
         display: block;
     }
 }
+
+.tile-image img.img-responsive {
+    height: 117px;
+    width: 204px;
+}

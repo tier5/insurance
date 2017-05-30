@@ -104,7 +104,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 							<a href="#">
 							    <div class="info-tile">
 								  <div class="tile-image">
-									<img src="<?php echo get_template_directory_uri();?>/images/menu-10.jpg" class="img-responsive" alt="img15">
+									<img src="<?php echo get_template_directory_uri();?>/images/images_13.jpg" class="img-responsive" alt="img15">
 								  </div>
 								  <div class="btn btn-block btn-primary">
 									<span>CONTEST</span>
