@@ -110,12 +110,12 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 				<?php if($query1->have_posts()): $i=0;?>
 					<div class="row">	
 					<?php while($query1->have_posts()):$query1->the_post();?>
-						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ));?>
+						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ),'full');?>
 				
 		  			<div class="col-sm-6 col-md-2 col-lg-2">
 						<a href="<?php echo get_the_content();?>" target="_blank">
 						<div class="info-tile">
-							<div class="tile-image">
+							<div class="">
 						<img class="width-max-150 img-responsive" src="<?php echo($image[0]!="")?$image[0]:'';?>">
 							</div>
 						</div>
@@ -155,7 +155,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 		  			<div class="col-sm-6 col-md-2 col-lg-2">
 						<a href="<?php echo get_the_content();?>" target="_blank">
 						<div class="info-tile">
-							<div class="tile-image">
+							<div class="">
 						<img class="width-max-150 img-responsive" src="<?php echo($image[0]!="")?$image[0]:'';?>">
 							</div>
 						</div>
