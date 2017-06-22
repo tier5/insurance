@@ -84,7 +84,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
         </ul>
 						<div id="my-tab-content" class="tab-content">
 							<div class="tab-pane active" id="red">
-								<div class="row">
+								<!-- <div class="row">
 								<div class="col-sm-4">
 									<div class="info-tile">
 										<div class="embed-responsive embed-responsive-16by9">
@@ -106,23 +106,23 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 								</div>
 							</div>
 						</div>
-							</div>
+							</div> -->
 							</div>
 							<div class="tab-pane" id="orange">
-								<h1>Orange</h1>
-								<p>orange orange orange orange orange</p>
+								<!-- <h1>Orange</h1>
+								<p>orange orange orange orange orange</p> -->
 							</div>
 							<div class="tab-pane" id="yellow">
-								<h1>Yellow</h1>
-								<p>yellow yellow yellow yellow yellow</p>
+								<!-- <h1>Yellow</h1>
+								<p>yellow yellow yellow yellow yellow</p> -->
 							</div>
 							<div class="tab-pane" id="green">
-								<h1>Green</h1>
-								<p>green green green green green</p>
+								<!-- <h1>Green</h1>
+								<p>green green green green green</p> -->
 							</div>
 							<div class="tab-pane" id="blue">
-								<h1>Blue</h1>
-								<p>blue blue blue blue blue</p>
+								<!-- <h1>Blue</h1>
+								<p>blue blue blue blue blue</p> -->
 							</div>
 						</div>
 					</div>
