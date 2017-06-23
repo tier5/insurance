@@ -383,5 +383,7 @@ function remove_agent_callback(){
   exit();
 }*/
 
+add_image_size( 'carrier-image', 103, 69, TRUE);
+
 ?>
 
