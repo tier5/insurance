@@ -144,7 +144,7 @@
     padding: 8px 3px 0 !important;
     font-size: 14px;
 }
-.mejs-container .mejs-controls .mejs-button button{
+/*.mejs-container .mejs-controls .mejs-button button{
     background: none !important;
     margin: 0 !important;
     height: 29px !important;
@@ -152,7 +152,7 @@
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     border-radius: 50% !important;
-}
+}*/
 .mejs-container .mejs-controls .mejs-button.mejs-play:before{
     font-family: "fontello";
     content: '\e8e1';
