@@ -5346,7 +5346,12 @@ footer.twitter_wrap .sc_section_overlay {
 	max-height: 308px !important;
 }
 
-
+.mejs-controls{
+	display: none !important;
+}
+.mejs-controls hover{
+	display: none !important;
+}
 
 
 /* 13. Third part plugins

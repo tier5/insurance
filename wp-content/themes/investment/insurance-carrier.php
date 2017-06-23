@@ -110,7 +110,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 				<?php if($query1->have_posts()): $i=0;?>
 					<div class="row">	
 					<?php while($query1->have_posts()):$query1->the_post();?>
-						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ),'full');?>
+						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ),array(103,69));?>
 				
 		  			<div class="col-sm-6 col-md-2 col-lg-2">
 						<a href="<?php echo get_the_content();?>" target="_blank">
@@ -150,7 +150,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 				<?php if($query2->have_posts()): $i=0;?>
 <div class="row">
 					<?php while($query2->have_posts()):$query2->the_post();?>
-						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ));?>
+						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ),array(103,69));?>
 				
 		  			<div class="col-sm-6 col-md-2 col-lg-2">
 						<a href="<?php echo get_the_content();?>" target="_blank">
