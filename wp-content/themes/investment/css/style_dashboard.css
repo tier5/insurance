@@ -659,6 +659,6 @@ ul{
 }
 
 .tile-image img.img-responsive {
-    height: 117px;
-    width: 204px;
+    height: auto;
+    width: 100%;
 }
