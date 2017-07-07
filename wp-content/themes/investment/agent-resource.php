@@ -94,7 +94,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 								if($x % 4 == 0) echo '<div class="row">';
 								?>
 							<div class="col-md-3">
-								<a href="<?php echo get_the_content();?>">
+								<a href="<?php echo get_the_content();?>" target="_blank">
 								    <div class="info-tile">
 									  <div class="tile-image">
 										<img src="<?php echo($pdfimages[0]!='') ? $pdfimages[0] : ''; ?>" class="img-responsive" alt="img15">
