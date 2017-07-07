@@ -146,7 +146,7 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 					</div>
 					<div class="row">
 						<div class="col-md-3">
-							<a href="#">
+							<a href="<?php echo site_url();?>/agent-resource">
 							    <div class="info-tile">
 								  <div class="tile-image">
 									<img src="<?php echo get_template_directory_uri();?>/images/menu-5.png" class="img-responsive" alt="img15">

@@ -77,7 +77,7 @@ $('form#change_pass').on('submit', function(e) {
 							<li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Contest</span></a></li>
 							<li><a href="#"><i class="fa fa-television" aria-hidden="true"></i><span>Leaderboard</span></a></li>
 							<li><a href="<?php echo site_url();?>/contracts/"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Contracting</span></a></li>
-							<li><a href="#"><i class="fa fa-black-tie" aria-hidden="true"></i><span>Resources</span></a></li>
+							<li><a href="<?php echo site_url();?>/agent-resource"><i class="fa fa-black-tie" aria-hidden="true"></i><span>Resources</span></a></li>
 							<li><a href="<?php echo site_url();?>/training"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Training</span></a></li>
 							<li><a href="#"><i class="fa fa-calendar"></i><span>Events</span></a></li>
 							<li><a href="<?php echo site_url();?>/new-business/"><i class="fa fa-building-o"></i><span>New Business</span></a></li>
