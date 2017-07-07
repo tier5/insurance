@@ -80,14 +80,19 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 					
 		<div id="content">
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-            <li class="active"><a href="#success-tools" data-toggle="tab">TOOLS FOR SUCCESS</a></li>
+            <li class="active"><a href="#success-tools" data-toggle="tab">PUSH In Home Presentation</a></li>
         </ul>
 						<div id="my-tab-content" class="tab-content">
 							<div class="tab-pane active" id="success-tools">
-							<?php if($resource_query->have_posts()){?>
+							<?php if($resource_query->have_posts()){
+
+								$x = 0;
+							?>
 						<div class="row">
 							<?php while($resource_query->have_posts()):$resource_query->the_post();?>
-								<?php $pdfimages = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'thumbnail' );?>
+								<?php $pdfimages = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'thumbnail' );
+								if($x % 4 == 0) echo '<div class="row">';
+								?>
 							<div class="col-md-3">
 								<a href="<?php echo get_the_content();?>">
 								    <div class="info-tile">
@@ -95,13 +100,13 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 										<img src="<?php echo($pdfimages[0]!='') ? $pdfimages[0] : ''; ?>" class="img-responsive" alt="img15">
 									  </div>
 									  <div class="btn btn-block btn-primary">
-										<span><?php echo get_the_title();?></span>
+										<span><?php //echo get_the_title();?></span>
 									  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
 									  </div>
 									</div>
 								</a>
 							</div>
-							<?php endwhile;wp_reset_query();?>
+							<?php  $x++;if($x % 4 == 0) echo '</div>'; endwhile;wp_reset_query();?>
 						</div>
 						<?php }?>
 						</div>
