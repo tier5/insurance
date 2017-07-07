@@ -99,10 +99,10 @@ $image = wp_get_attachment_image_src(get_user_meta($user_info->ID,'image_id',tru
 									  <div class="tile-image">
 										<img src="<?php echo($pdfimages[0]!='') ? $pdfimages[0] : ''; ?>" class="img-responsive" alt="img15">
 									  </div>
-									  <div class="btn btn-block btn-primary">
+									  <!-- <div class="btn btn-block btn-primary">
 										<span><?php //echo get_the_title();?></span>
 									  <i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
-									  </div>
+									  </div> -->
 									</div>
 								</a>
 							</div>
